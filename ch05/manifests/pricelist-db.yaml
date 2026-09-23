@@ -24,14 +24,16 @@ spec:
       - image: mysql:5.6.51
         name: mysql
         args:
-          - --innodb-buffer-pool-size=256M
-          - --performance-schema=OFF
+          - "--innodb-buffer-pool-size=64M"
+          - "--performance-schema=OFF"
+          - "--max-connections=25"
+          - "--key-buffer-size=8M"
         resources:
           requests:
-            memory: "512Mi"
-            cpu: "250m"
+            memory: "256Mi"
+            cpu: "100m"
           limits:
-            memory: "1Gi"
+            memory: "512Mi"
             cpu: "500m"
         env:
         - name: MYSQL_DATABASE
