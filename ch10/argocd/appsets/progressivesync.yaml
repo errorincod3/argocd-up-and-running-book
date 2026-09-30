@@ -9,9 +9,9 @@ spec:
       elements:
       - srv: database
         path: ch10/apps/golist-db/
-      - srv: api
-        path: ch10/apps/golist-api/
       - srv: backend
+        path: ch10/apps/golist-api/
+      - srv: frontend
         path: ch10/apps/golist-frontend/
   strategy:
     type: RollingSync
