@@ -7,11 +7,11 @@ spec:
   generators:
   - list:
       elements:
-      - srv: db
+      - srv: database
         path: ch10/apps/golist-db/
       - srv: api
         path: ch10/apps/golist-api/
-      - srv: frontend
+      - srv: backend
         path: ch10/apps/golist-frontend/
   strategy:
     type: RollingSync
@@ -21,12 +21,12 @@ spec:
             - key: golist-component
               operator: In
               values:
-                - db
+                - database
         - matchExpressions:
             - key: golist-component
               operator: In
               values:
-                - api
+                - backend
         - matchExpressions:
             - key: golist-component
               operator: In
