@@ -17,7 +17,7 @@ spec:
         app: golist-frontend
     spec:
       containers:
-      - image: quay.io/christianh814/golist-frontend:latest
+      - image: harbor.a-7.tech/tmp/golist-frontend:latest
         livenessProbe:
           httpGet:
             path: /
