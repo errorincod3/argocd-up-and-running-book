@@ -16,7 +16,7 @@ spec:
         app: golist-api
     spec:
       containers:
-      - image: quay.io/christianh814/golist-api:latest
+      - image: harbor.a-7.tech/tmp/golist-api:latest
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
