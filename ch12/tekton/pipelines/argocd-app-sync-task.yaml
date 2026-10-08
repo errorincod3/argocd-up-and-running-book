@@ -38,7 +38,7 @@ spec:
       - secretRef:
           name: argocd-env-secret  # used for authentication (username/password or auth token)
   steps:
-    - name: sync-app
+    - name: argocd-task-sync-and-wait
       image: quay.io/argoproj/argocd:$(params.argocd-version)
       script: |
         if [ -z "$ARGOCD_AUTH_TOKEN" ]; then

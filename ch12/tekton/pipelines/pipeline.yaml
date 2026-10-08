@@ -3,7 +3,7 @@ kind: Pipeline
 metadata:
   name: lint-sync-argocd
 spec:
-  description: | 
+  description: |
     Pipeline to lint source code and synchronize Argo CD repository
   params:
   - name: repo-url
@@ -29,7 +29,7 @@ spec:
     default: main
   workspaces:
   - name: shared-data
-    description: | 
+    description: |
       This workspace contains the cloned repo files, so they can be read by the
       next task.
   tasks:
@@ -54,7 +54,7 @@ spec:
     params:
     - name: manifests-dir
       value: $(params.manifests-dir)
-  - name: sync-app
+  - name: argocd-task-sync-and-wait
     runAfter: ["kustomize-lint"]
     taskRef:
       name: argocd-task-sync-and-wait
