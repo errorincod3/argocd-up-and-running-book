@@ -16,8 +16,8 @@ spec:
         app: golist-api
     spec:
       containers:
-      - image: harbor.a-7.tech/tmp/golist-api:latest
-        imagePullPolicy: IfNotPresent
+      - image: quay.io/christianh814/golist-api:latest
+        # imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
             path: /healthz
